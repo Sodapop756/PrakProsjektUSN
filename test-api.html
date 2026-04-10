@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test - academiAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-container {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        .success { border-left: 4px solid #27ae60; }
+        .error { border-left: 4px solid #e74c3c; }
+        .warning { border-left: 4px solid #f39c12; }
+    </style>
+</head>
+<body>
+    <h1>academiAI API Test</h1>
+    <p>Use this page to test your DeepSeek API configuration.</p>
+    
+    <div class="test-container">
+        <h2>Step 1: Check Configuration</h2>
+        <button onclick="checkConfig()">Check Config</button>
+        <div id="config-result" class="result"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Step 2: Test API Connection</h2>
+        <button onclick="testAPI()" id="test-api-btn">Test API Connection</button>
+        <div id="api-result" class="result"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Step 3: Test Safety Filters</h2>
+        <button onclick="testSafety()">Test Safety Filters</button>
+        <div id="safety-result" class="result"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Next Steps</h2>
+        <ul>
+            <li>If tests pass, open <a href="index.html">index.html</a></li>
+            <li>If API key missing, get one from <a href="https://platform.deepseek.com/" target="_blank">DeepSeek</a></li>
+            <li>Add API key to <code>config.js</code></li>
+            <li>Restart Live Server after making changes</li>
+        </ul>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        function checkConfig() {
+            const resultDiv = document.getElementById('config-result');
+            const apiKey = academiAIConfig.deepseek.apiKey;
+            
+            if (!apiKey || apiKey === 'your-api-key-here') {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ API Key Not Configured</strong>
+                        <p>Please add your DeepSeek API key to config.js</p>
+                        <p>Current value: <code>${apiKey || 'empty'}</code></p>
+                    </div>
+                `;
+                return false;
+            }
+            
+            if (apiKey.length < 20) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ Invalid API Key Format</strong>
+                        <p>API key appears too short. It should be a longer string starting with 'sk-'</p>
+                    </div>
+                `;
+                return false;
+            }
+            
+            resultDiv.innerHTML = `
+                <div class="success">
+                    <strong>✅ Configuration Valid</strong>
+                    <p>API key is configured (first 10 chars: ${apiKey.substring(0, 10)}...)</p>
+                    <p>Model: ${academiAIConfig.deepseek.model}</p>
+                    <p>Temperature: ${academiAIConfig.deepseek.temperature}</p>
+                </div>
+            `;
+            return true;
+        }
+        
+        async function testAPI() {
+            const btn = document.getElementById('test-api-btn');
+            const resultDiv = document.getElementById('api-result');
+            
+            if (!checkConfig()) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>Cannot test API: Configuration invalid</strong>
+                    </div>
+                `;
+                return;
+            }
+            
+            btn.disabled = true;
+            btn.textContent = 'Testing...';
+            resultDiv.innerHTML = '<div class="warning">Testing API connection...</div>';
+            
+            try {
+                const response = await fetch(academiAIConfig.deepseek.apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${academiAIConfig.deepseek.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: academiAIConfig.deepseek.model,
+                        messages: [{
+                            role: 'user',
+                            content: 'Say "API test successful" if you can read this.'
+                        }],
+                        temperature: 0.1,
+                        max_tokens: 20
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <strong>✅ API Connection Successful!</strong>
+                            <p>Response: ${data.choices[0].message.content}</p>
+                            <p>Model: ${data.model}</p>
+                            <p>Tokens used: ${data.usage.total_tokens}</p>
+                        </div>
+                    `;
+                } else {
+                    const error = await response.text();
+                    resultDiv.innerHTML = `
+                        <div class="error">
+                            <strong>❌ API Error ${response.status}</strong>
+                            <p>${error}</p>
+                            <p>Check your API key and internet connection</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ Network Error</strong>
+                        <p>${error.message}</p>
+                        <p>This could be a CORS issue. Try running through Live Server.</p>
+                    </div>
+                `;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Test API Connection';
+            }
+        }
+        
+        function testSafety() {
+            const resultDiv = document.getElementById('safety-result');
+            const testCases = [
+                {
+                    message: "What's your email address?",
+                    expected: 'blocked',
+                    description: 'Personal information request'
+                },
+                {
+                    message: "Do my homework about climate change",
+                    expected: 'blocked',
+                    description: 'Request for complete work'
+                },
+                {
+                    message: "How can I use AI ethically for research?",
+                    expected: 'allowed',
+                    description: 'Ethical guidance request'
+                }
+            ];
+            
+            let results = '<h3>Safety Filter Tests:</h3>';
+            
+            testCases.forEach(test => {
+                const safetyCheck = SafetyFilters.checkMessageSafety(test.message);
+                const passed = (test.expected === 'blocked') ? !safetyCheck.safe : safetyCheck.safe;
+                
+                results += `
+                    <div style="margin: 10px 0; padding: 10px; border-left: 4px solid ${passed ? '#27ae60' : '#e74c3c'}">
+                        <strong>${passed ? '✅' : '❌'} ${test.description}</strong>
+                        <p><em>"${test.message}"</em></p>
+                        <p>Expected: ${test.expected} | Got: ${safetyCheck.safe ? 'allowed' : 'blocked'}</p>
+                        ${!safetyCheck.safe ? `<p>Reason: ${safetyCheck.reason}</p>` : ''}
+                    </div>
+                `;
+            });
+            
+            resultDiv.innerHTML = results;
+        }
+    </script>
+    <script src="scripts/safety-filters.js"></script>
+</body>
+</html>

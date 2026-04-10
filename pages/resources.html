@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - academiAI</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <style>
+        .resources-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .resource-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card p {
+            color: #666;
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+        .resource-links {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .resource-links a {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .resource-links a:hover {
+            background: #2980b9;
+        }
+        
+        .faq-section {
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .faq-question {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: "▼";
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 0.75rem;
+        }
+        
+        .download-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--success-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .download-btn:hover {
+            background: #219653;
+            transform: translateY(-2px);
+        }
+        
+        .download-btn.secondary {
+            background: var(--primary-color);
+        }
+        
+        .download-btn.secondary:hover {
+            background: #1a252f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <div class="logo-icon">AI</div>
+                <h1><a href="../index.html">academiAI</a></h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="tutorial.html">AI Tutorial</a></li>
+                <li><a href="guidelines.html">Guidelines</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="background: linear-gradient(135deg, #2c3e50, #3498db); padding: 3rem 2rem;">
+            <div class="container">
+                <h1>Additional Resources</h1>
+                <p>Tools, guides, and references for responsible AI use in academia</p>
+            </div>
+        </section>
+
+        <section class="features" style="padding: 3rem 2rem;">
+            <div class="container">
+                <div class="resources-container">
+                    <!-- Resource Cards -->
+                    <div class="resource-grid">
+                        <!-- AI Tools Card -->
+                        <div class="resource-card">
+                            <div class="resource-icon">🤖</div>
+                            <h3>AI Tools for Students</h3>
+                            <p>Recommended AI tools that can help with studying, research, and writing while maintaining academic integrity.</p>
+                            <div class="resource-links">
+                                <a href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a>
+                                <a href="https://bard.google.com" target="_blank" rel="noopener">Google Bard</a>
+                                <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+                                <a href="https://www.grammarly.com" target="_blank" rel="noopener">Grammarly</a>
+                            </div>
+                        </div>
+
+                        <!-- Academic Integrity Card -->
+                        <div class="resource-card">
+                            <div class="resource-icon">🎓</div>
+                            <h3>Academic Integrity Resources</h3>
+                            <p>University policies, plagiarism checkers, and citation guides to ensure your work meets academic standards.</p>
+                            <div class="resource-links">
+                                <a href="https://www.turnitin.com" target="_blank" rel="noopener">Turnitin</a>
+                                <a href="https://www.grammarly.com/plagiarism-checker" target="_blank" rel="noopener">Grammarly Checker</a>
+                                <a href="https://owl.purdue.edu" target="_blank" rel="noopener">Purdue OWL</a>
+                                <a href="https://www.citationmachine.net" target="_blank" rel="noopener">Citation Machine</a>
+                            </div>
+                        </div>
+
+                        <!-- Privacy Tools Card -->
+                        <div class="resource-card">
+                            <div class="resource-icon">🛡️</div>
+                            <h3>Privacy & Security Tools</h3>
+                            <p>Tools to protect your data and maintain privacy when using online services and AI tools.</p>
+                            <div class="resource-links">
+                                <a href="https://www.privacyguides.org" target="_blank" rel="noopener">Privacy Guides</a>
+                                <a href="https://www.eff.org" target="_blank" rel="noopener">EFF</a>
+                                <a href="https://privacy.com" target="_blank" rel="noopener">Privacy.com</a>
+                                <a href="https://www.expressvpn.com" target="_blank" rel="noopener">VPN Guide</a>
+                            </div>
+                        </div>
+
+                        <!-- Study Resources Card -->
+                        <div class="resource-card">
+                            <div class="resource-icon">📚</div>
+                            <h3>Study & Research Resources</h3>
+                            <p>Academic databases, research tools, and study aids to complement your AI use.</p>
+                            <div class="resource-links">
+                                <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
+                                <a href="https://www.jstor.org" target="_blank" rel="noopener">JSTOR</a>
+                                <a href="https://www.researchgate.net" target="_blank" rel="noopener">ResearchGate</a>
+                                <a href="https://www.zotero.org" target="_blank" rel="noopener">Zotero</a>
+                            </div>
+                        </div>
+
+                        <!-- University Policies Card -->
+                        <div class="resource-card">
+                            <div class="resource-icon">🏛️</div>
+                            <h3>University AI Policies</h3>
+                            <p>Links to AI use policies from major universities to help you understand institutional guidelines.</p>
+                            <div class="resource-links">
+                                <a href="https://ai.stanford.edu" target="_blank" rel="noopener">Stanford AI</a>
+                                <a href="https://mit.edu/ai" target="_blank" rel="noopener">MIT AI</a>
+                                <a href="https://ai.harvard.edu" target="_blank" rel="noopener">Harvard AI</a>
+                                <a href="https://ai.berkeley.edu" target="_blank" rel="noopener">Berkeley AI</a>
+                            </div>
+                        </div>
+
+                        <!-- Learning Communities Card -->
+                        <div class="resource-card">
+                            <div class="resource-icon">👥</div>
+                            <h3>Learning Communities</h3>
+                            <p>Online communities and forums for discussing AI ethics and academic technology use.</p>
+                            <div class="resource-links">
+                                <a href="https://www.reddit.com/r/aiethics" target="_blank" rel="noopener">r/AIEthics</a>
+                                <a href="https://www.reddit.com/r/academia" target="_blank" rel="noopener">r/Academia</a>
+                                <a href="https://discord.gg/ai" target="_blank" rel="noopener">AI Discord</a>
+                                <a href="https://stackoverflow.com" target="_blank" rel="noopener">Stack Overflow</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Downloadable Resources -->
+                    <div class="download-section">
+                        <h2>Downloadable Resources</h2>
+                        <p>Printable guides and checklists for quick reference</p>
+                        
+                        <a href="#" class="download-btn" onclick="downloadPDF('guidelines')">
+                            📄 AI Guidelines PDF
+                        </a>
+                        <a href="#" class="download-btn secondary" onclick="downloadPDF('checklist')">
+                            ✅ Ethical Use Checklist
+                        </a>
+                        <a href="#" class="download-btn" onclick="downloadPDF('prompting')">
+                            💡 Prompting Guide
+                        </a>
+                        
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                            <small>Note: These are demo download buttons. In a real implementation, they would download actual PDFs.</small>
+                        </p>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="faq-section">
+                        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">
+                            Frequently Asked Questions
+                        </h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Is using AI considered cheating?
+                            </div>
+                            <div class="faq-answer">
+                                Using AI is not inherently cheating, but it can become cheating depending on how you use it. Using AI to enhance your learning, understand concepts, or get feedback is generally acceptable. Using AI to generate work that you submit as your own, especially without permission or proper citation, is typically considered academic dishonesty.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Do I need to cite AI-generated content?
+                            </div>
+                            <div class="faq-answer">
+                                Yes, in most cases. Most academic institutions require you to acknowledge AI assistance. The specific citation format varies, but typically you should mention: the AI tool used, the date of access, and your prompt. Always check your institution's specific guidelines.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How can I verify AI-generated information?
+                            </div>
+                            <div class="faq-answer">
+                                Always cross-reference important information with credible sources. Use academic databases, peer-reviewed journals, government publications, and reputable educational websites. Look for consensus among multiple reliable sources and check the references provided by AI.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What personal information should I never share with AI?
+                            </div>
+                            <div class="faq-answer">
+                                Never share: your full name, address, phone number, student ID, social security number, financial information, passwords, or any sensitive research data. Assume anything you input could be stored, reviewed, or used for training.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can I use AI for exams or graded assignments?
+                            </div>
+                            <div class="faq-answer">
+                                This depends entirely on your institution's and instructor's policies. Some allow AI as a study aid but not for graded work. Some have specific guidelines for different types of assignments. When in doubt, always ask your instructor for clarification.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How can I use AI to actually learn, not just get answers?
+                            </div>
+                            <div class="faq-answer">
+                                Use AI as a tutor, not an answer machine. Ask for explanations of concepts, request analogies to help understanding, ask for practice problems, get feedback on your work, request outlines rather than full essays, and ask "why" questions to deepen your understanding.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact/Feedback Section -->
+                    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: var(--border-radius);">
+                        <h3>Have More Questions?</h3>
+                        <p>This is a capstone project for educational purposes. For real implementation questions, consult your institution's academic advisors or technology support services.</p>
+                        <p style="margin-top: 1rem;">
+                            <a href="../index.html#chat-messages" class="cta-button">Ask academiAI</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>academiAI</h3>
+                    <p>Promoting responsible AI use in education</p>
+                    <p id="current-year">© 2024 academiAI</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="tutorial.html">Interactive Tutorial</a></li>
+                        <li><a href="guidelines.html">AI Guidelines</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Important</h4>
+                    <p>This tool provides guidance only. Always follow your institution's specific policies.</p>
+                    <p class="api-status">API Status: Check Home Page</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Capstone Project - AIGuidebook | For educational purposes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Set current year
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = `© ${new Date().getFullYear()} academiAI`;
+            }
+        });
+        
+        // Demo download function
+        function downloadPDF(type) {
+            alert(`In a real implementation, this would download a ${type} PDF.`);
+            return false;
+        }
+    </script>
+</body>
+</html>

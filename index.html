@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>academiAI - Responsible AI for Students</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <div class="logo-icon">AI</div>
+                <h1>academiAI</h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/tutorial.html">AI Tutorial</a></li>
+                <li><a href="pages/guidelines.html">Guidelines</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Responsible AI Use in Academia</h2>
+                <p>Learn to use AI tools safely, ethically, and effectively in your studies</p>
+                <a href="pages/tutorial.html" class="cta-button">Start Tutorial</a>
+            </div>
+        </section>
+
+        <section class="ai-guide-section">
+            <div class="container">
+                <h2>Ask academiAI</h2>
+                <p class="subtitle">Get guidance on using AI responsibly (temperature: 0.1 for accuracy)</p>
+                
+                <div class="config-warning" id="config-warning">
+                    <strong>⚠️ Setup Required:</strong> Add your DeepSeek API key to config.js for full functionality.
+                    <br><small>Currently running in demo mode with limited responses.</small>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot">
+                            <div class="sender-label">academiAI</div>
+                            <div class="message-text">Hello! I'm academiAI. I can help you understand how to use AI tools responsibly in your studies. I won't provide complete answers or personal advice, but I can guide you on ethical AI use. What would you like to know?</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="safety-notice">
+                            <span class="safety-icon">⚠️</span>
+                            <small>I will never ask for or store personal information. I provide guidance, not answers.</small>
+                        </div>
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="user-input" 
+                                placeholder="Ask about ethical AI use, academic integrity, or AI limitations..."
+                                maxlength="500"
+                                rows="3"
+                            ></textarea>
+                            <button id="send-button">Send</button>
+                        </div>
+                        <div class="input-limits">
+                            <span id="char-count">0/500</span>
+                            <span class="temp-indicator">Temperature: 0.1 (Precise Mode)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="safety-features">
+                    <h3>Safety Features Active:</h3>
+                    <ul>
+                        <li>No personal data collection</li>
+                        <li>No complete answers provided</li>
+                        <li>Low temperature (0.1) to reduce hallucinations</li>
+                        <li>Academic integrity focused</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>What You'll Learn</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Academic Integrity</h3>
+                        <p>Understand what constitutes cheating vs. ethical AI assistance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Privacy Protection</h3>
+                        <p>Learn what information you should never share with AI</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Fact-Checking</h3>
+                        <p>How to verify AI-generated information</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Effective Prompting</h3>
+                        <p>Get better results while maintaining academic standards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>academiAI</h3>
+                    <p>Promoting responsible AI use in education</p>
+                    <p id="current-year">© 2024 academiAI</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="pages/tutorial.html">Interactive Tutorial</a></li>
+                        <li><a href="pages/guidelines.html">AI Guidelines</a></li>
+                        <li><a href="pages/resources.html">Resources</a></li>
+                        <li><a href="#chat-messages">Ask academiAI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Important</h4>
+                    <p>This tool provides guidance only. Always follow your institution's specific policies.</p>
+                    <p class="api-status" id="api-status">API: Not Configured</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Capstone Project - AIGuidebook | For educational purposes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/safety-filters.js"></script>
+    <script src="scripts/ai-guide.js"></script>
+</body>
+</html>

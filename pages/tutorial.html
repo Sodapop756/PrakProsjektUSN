@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive AI Tutorial - academiAI</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/tutorial.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <div class="logo-icon">AI</div>
+                <h1><a href="../index.html">academiAI</a></h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="tutorial.html" class="active">AI Tutorial</a></li>
+                <li><a href="guidelines.html">Guidelines</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tutorial-header">
+            <div class="container">
+                <h1>Interactive AI Tutorial</h1>
+                <p>Learn responsible AI use through practical scenarios</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                    <div class="progress-labels">
+                        <span>AI Limitations</span>
+                        <span>Privacy & Data</span>
+                        <span>Ethical Prompting</span>
+                        <span>Academic Integrity</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorial-content">
+            <div class="container">
+                <div class="tutorial-module" id="module-1">
+                    <h2>Module 1: Understanding AI Limitations</h2>
+                    <p>AI tools can be helpful, but they have important limitations you need to understand.</p>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Research Assistance</h3>
+                        <p>You're writing a paper on climate change impacts. You ask an AI tool to provide academic sources and it gives you a list of 10 references.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="false">Use all sources without checking - the AI found them so they must be valid</button>
+                            <button class="option-btn" data-correct="true">Verify each source exists, is credible, and supports your argument</button>
+                            <button class="option-btn" data-correct="false">Assume the AI found the best sources and cite them all</button>
+                        </div>
+                        <div class="feedback" id="feedback-1"></div>
+                    </div>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Fact Checking</h3>
+                        <p>An AI provides you with specific statistics about renewable energy adoption rates in different countries.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="true">Cross-reference the statistics with reputable sources like government databases or academic journals</button>
+                            <button class="option-btn" data-correct="false">Use the statistics as-is since the AI seems confident</button>
+                            <button class="option-btn" data-correct="false">Trust the AI because it has access to more information than you do</button>
+                        </div>
+                        <div class="feedback" id="feedback-1b"></div>
+                    </div>
+                </div>
+
+                <div class="tutorial-module hidden" id="module-2">
+                    <h2>Module 2: Privacy & Data Protection</h2>
+                    <p>Protecting your personal information is crucial when using AI tools.</p>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Study Group Organization</h3>
+                        <p>You want to use AI to help organize study group meetings. You need to input participant information.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="false">Input everyone's full names, emails, and phone numbers for better organization</button>
+                            <button class="option-btn" data-correct="true">Use generic identifiers like "Student A, Student B" and avoid personal details</button>
+                            <button class="option-btn" data-correct="false">Share only first names, that should be safe enough</button>
+                        </div>
+                        <div class="feedback" id="feedback-2"></div>
+                    </div>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Assignment Help</h3>
+                        <p>You're struggling with a programming assignment and want AI help with debugging your code.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="true">Share only the problematic code snippet without any personal identifiers</button>
+                            <button class="option-btn" data-correct="false">Share the entire project including comments with your name and student ID</button>
+                            <button class="option-btn" data-correct="false">Ask the AI to write the whole program for you with your personal details in comments</button>
+                        </div>
+                        <div class="feedback" id="feedback-2b"></div>
+                    </div>
+                </div>
+
+                <div class="tutorial-module hidden" id="module-3">
+                    <h2>Module 3: Ethical Prompting</h2>
+                    <p>How you ask questions matters. Learn to prompt ethically and effectively.</p>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Essay Writing</h3>
+                        <p>You have an essay due about the causes of World War I.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="false">"Write me a 1500-word essay about the causes of World War I"</button>
+                            <button class="option-btn" data-correct="true">"Help me create an outline for an essay about the main causes of World War I"</button>
+                            <button class="option-btn" data-correct="false">"Give me a complete analysis of World War I causes that I can submit as my essay"</button>
+                        </div>
+                        <div class="feedback" id="feedback-3"></div>
+                    </div>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Math Problem</h3>
+                        <p>You're stuck on a calculus problem for your mathematics assignment.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="true">"Explain the steps to solve this type of integral: ∫(3x² + 2x)dx"</button>
+                            <button class="option-btn" data-correct="false">"Solve this integral for me: ∫(3x² + 2x)dx"</button>
+                            <button class="option-btn" data-correct="true">"What concepts do I need to understand to solve integrals like this?"</button>
+                        </div>
+                        <div class="feedback" id="feedback-3b"></div>
+                    </div>
+                </div>
+
+                <div class="tutorial-module hidden" id="module-4">
+                    <h2>Module 4: Academic Integrity</h2>
+                    <p>Understanding the line between help and cheating is essential.</p>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Take-Home Exam</h3>
+                        <p>You have a take-home exam where the instructions say "work must be your own."</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="true">Use AI to explain concepts you don't understand, then write answers in your own words</button>
+                            <button class="option-btn" data-correct="false">Have AI generate answers, then slightly reword them before submitting</button>
+                            <button class="option-btn" data-correct="false">Submit AI-generated answers since it's a take-home exam</button>
+                        </div>
+                        <div class="feedback" id="feedback-4"></div>
+                    </div>
+                    
+                    <div class="scenario">
+                        <h3>Scenario: Literature Review</h3>
+                        <p>You need to write a literature review for a research paper.</p>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-correct="true">Use AI to suggest key authors and papers, then read and synthesize them yourself</button>
+                            <button class="option-btn" data-correct="false">Ask AI to write the literature review based on the papers it suggests</button>
+                            <button class="option-btn" data-correct="true">Use AI to help organize your thoughts about the literature you've read</button>
+                        </div>
+                        <div class="feedback" id="feedback-4b"></div>
+                    </div>
+                </div>
+
+                <div class="tutorial-controls">
+                    <button id="prev-btn" disabled>Previous</button>
+                    <button id="next-btn">Next Module</button>
+                    <button id="complete-btn" class="hidden">Complete Tutorial</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>academiAI</h3>
+                    <p>Promoting responsible AI use in education</p>
+                    <p id="current-year">© 2024 academiAI</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="tutorial.html">Interactive Tutorial</a></li>
+                        <li><a href="guidelines.html">AI Guidelines</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Important</h4>
+                    <p>This tool provides guidance only. Always follow your institution's specific policies.</p>
+                    <p class="api-status">API Status: Check Home Page</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Capstone Project - AIGuidebook | For educational purposes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/tutorial.js"></script>
+</body>
+</html>
