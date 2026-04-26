@@ -1,0 +1,70 @@
+[
+  {
+    "module": "Understanding AI Limitations",
+    "intro": "AI tools can be incredibly useful, but they have important limitations. This module explores how to use AI outputs critically and responsibly.",
+    "scenarios": [
+      {
+        "label": "Scenario: Research References",
+        "text": "You're writing a paper on climate change. You ask an AI tool for academic sources and it gives you a list of 10 references with author names and journal titles.",
+        "options": [
+          { "text": "Use all sources without checking — the AI found them so they must be valid.", "correct": false },
+          { "text": "Verify each source actually exists and is credible before citing it.", "correct": true },
+          { "text": "Cite the ones that look the most impressive and ignore the rest.", "correct": false }
+        ],
+        "feedbackCorrect": "AI tools frequently hallucinate references — they can produce author names, titles, and journals that don't actually exist. Always verify every source in an academic database.",
+        "feedbackIncorrect": "AI tools frequently hallucinate references. They can produce author names, titles, and journals that don't actually exist. You should always verify sources independently."
+      }
+    ]
+  },
+  {
+    "module": "Privacy & Data Protection",
+    "intro": "Protecting your personal information is crucial when using AI tools. What you share can be stored, reviewed, or used in ways you don't expect.",
+    "scenarios": [
+      {
+        "label": "Scenario: Study Group Help",
+        "text": "You want to use AI to help schedule a study group. You need to include some participant details in your prompt.",
+        "options": [
+          { "text": "Include everyone's full names, emails and phone numbers for accuracy.", "correct": false },
+          { "text": "Use generic identifiers like 'Student A, Student B' and avoid real personal details.", "correct": true },
+          { "text": "Only share first names — that should be safe enough.", "correct": false }
+        ],
+        "feedbackCorrect": "Using generic identifiers protects your classmates' privacy. You don't need real personal data for AI to help you with scheduling or planning.",
+        "feedbackIncorrect": "Even first names can be personal data. Use generic placeholders when possible. Real names and contact details should never be shared with AI tools."
+      }
+    ]
+  },
+  {
+    "module": "Ethical Prompting",
+    "intro": "How you ask questions matters. Ethical prompting means asking for guidance and understanding — not outsourcing your thinking to the AI.",
+    "scenarios": [
+      {
+        "label": "Scenario: Essay Assignment",
+        "text": "You have an essay due on the causes of World War I. You want to use AI to help.",
+        "options": [
+          { "text": "\"Write me a 1500-word essay on the causes of World War I.\"", "correct": false },
+          { "text": "\"Help me create an outline for an essay on the main causes of World War I.\"", "correct": true },
+          { "text": "\"Give me a complete analysis I can use as my essay.\"", "correct": false }
+        ],
+        "feedbackCorrect": "Asking for an outline keeps you in control of the thinking and writing. You develop understanding — AI helps you structure it.",
+        "feedbackIncorrect": "Asking AI to write the entire essay or give you a complete analysis bypasses the learning process and likely violates your institution's academic integrity policies."
+      }
+    ]
+  },
+  {
+    "module": "Academic Integrity",
+    "intro": "Understanding the line between ethical AI assistance and academic dishonesty is essential for your success and credibility.",
+    "scenarios": [
+      {
+        "label": "Scenario: Take-Home Exam",
+        "text": "You have a take-home exam where the instructions say 'work must be your own.'",
+        "options": [
+          { "text": "Use AI to explain concepts you don't understand, then write your answers in your own words.", "correct": true },
+          { "text": "Have AI generate answers, then slightly rephrase them before submitting.", "correct": false },
+          { "text": "Submit AI-generated answers — it's take-home, so it must be allowed.", "correct": false }
+        ],
+        "feedbackCorrect": "Using AI to understand concepts, then writing your own answers, is ethical. You're using AI as a teacher — the thinking and expression are still yours.",
+        "feedbackIncorrect": "'Work must be your own' means your thinking and writing — not AI's. Rephrasing AI output is still academic dishonesty. Always ask your instructor if you're uncertain."
+      }
+    ]
+  }
+]

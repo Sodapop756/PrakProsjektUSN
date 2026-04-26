@@ -1,0 +1,30 @@
+[
+  {
+    "q": "Is using AI considered cheating?",
+    "a": "Using AI is not inherently cheating, but it depends entirely on how you use it and what your institution's policies say. Using AI to understand concepts, brainstorm, or get feedback is generally acceptable. Submitting AI-generated work as your own — especially without permission or proper citation — is typically considered academic dishonesty. When in doubt, ask your instructor."
+  },
+  {
+    "q": "Do I need to cite AI-generated content?",
+    "a": "Yes, in most cases. Most academic institutions now require you to acknowledge AI assistance. The specific citation format varies (APA, Harvard, Chicago all have emerging standards), but typically you should mention the tool used, the date of access, and your prompt. Always check your institution's specific guidelines first."
+  },
+  {
+    "q": "How can I verify AI-generated information?",
+    "a": "Always cross-reference important information with credible sources. Use academic databases (Google Scholar, JSTOR), peer-reviewed journals, government publications, and reputable educational websites. Look for consensus among multiple reliable sources. Never trust AI references without checking — AI tools can 'hallucinate' citations that don't exist."
+  },
+  {
+    "q": "What personal information should I never share with AI?",
+    "a": "Never share: your full name, address, phone number, student ID, social security or national identification numbers, financial information, passwords, sensitive research data, or other people's personal information. Assume anything you input could be stored, reviewed, or used for model training."
+  },
+  {
+    "q": "Can I use AI for exams or graded assignments?",
+    "a": "This depends entirely on your institution's and instructor's policies. Some courses allow AI as a study aid but not for graded work. Some have specific guidelines per assignment type. When in doubt, always ask your instructor for clarification before submitting."
+  },
+  {
+    "q": "How can I use AI to actually learn, not just get answers?",
+    "a": "Use AI as a tutor rather than an answer machine. Ask for explanations of concepts, request analogies to help your understanding, ask for practice problems, get feedback on your own draft work, request outlines rather than full essays, and ask 'why' questions to deepen understanding. The goal is engagement with the material — not bypassing it."
+  },
+  {
+    "q": "What is AI hallucination and how do I spot it?",
+    "a": "Hallucination is when an AI confidently produces false information — including made-up citations, incorrect statistics, or fabricated facts. To spot it: verify all specific claims against original sources, check that any citations actually exist, and be especially skeptical when AI sounds very confident. Cross-reference with academic databases before using any AI-generated facts in your work."
+  }
+]

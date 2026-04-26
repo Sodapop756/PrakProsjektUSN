@@ -1,418 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Guidelines - academiAI</title>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <style>
-        .guidelines-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .guideline-category {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--box-shadow);
-            border-top: 4px solid var(--secondary-color);
-        }
-        
-        .guideline-category h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .dos-donts {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .dos-donts {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .dos, .donts {
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-        }
-        
-        .dos {
-            background: rgba(39, 174, 96, 0.1);
-            border: 1px solid rgba(39, 174, 96, 0.3);
-        }
-        
-        .donts {
-            background: rgba(231, 76, 60, 0.1);
-            border: 1px solid rgba(231, 76, 60, 0.3);
-        }
-        
-        .dos h3, .donts h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .dos h3::before {
-            content: "✅";
-        }
-        
-        .donts h3::before {
-            content: "❌";
-        }
-        
-        .guideline-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .guideline-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        
-        .dos .guideline-list li::before {
-            content: "✓";
-            color: var(--success-color);
-            font-weight: bold;
-        }
-        
-        .donts .guideline-list li::before {
-            content: "✗";
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        
-        .checklist {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-        }
-        
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: white;
-            border-radius: var(--border-radius);
-            border: 1px solid #e0e0e0;
-        }
-        
-        .checklist-item input[type="checkbox"] {
-            margin-top: 0.25rem;
-        }
-        
-        .checklist-item label {
-            flex: 1;
-            cursor: pointer;
-        }
-        
-        .checklist-item.completed {
-            background: rgba(39, 174, 96, 0.1);
-            border-color: var(--success-color);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Guidelines — AIGuideBook</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/responsive.css">
 </head>
 <body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <div class="logo-icon">AI</div>
-                <h1><a href="../index.html">academiAI</a></h1>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="tutorial.html">AI Tutorial</a></li>
-                <li><a href="guidelines.html" class="active">Guidelines</a></li>
-                <li><a href="resources.html">Resources</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero" style="background: linear-gradient(135deg, #2c3e50, #3498db); padding: 3rem 2rem;">
-            <div class="container">
-                <h1>AI Usage Guidelines</h1>
-                <p>Clear rules and examples for responsible AI use in academic work</p>
-            </div>
-        </section>
+<!-- ── Navigation ── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand" aria-label="AIGuideBook home">
+      <div class="nav-brand__mark" aria-hidden="true">AI</div>
+      <span class="nav-brand__name">AIGuideBook</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tutorial.html">Tutorial</a></li>
+      <li><a href="guidelines.html">Guidelines</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  </div>
+</nav>
 
-        <section class="features" style="padding: 3rem 2rem;">
-            <div class="container">
-                <div class="guidelines-container">
-                    <!-- Academic Integrity Guidelines -->
-                    <div class="guideline-category">
-                        <h2>📚 Academic Integrity</h2>
-                        <p>Maintaining honesty and ethical standards while using AI tools.</p>
-                        
-                        <div class="dos-donts">
-                            <div class="dos">
-                                <h3>DO</h3>
-                                <ul class="guideline-list">
-                                    <li>Use AI to explain concepts you don't understand</li>
-                                    <li>Ask for help with brainstorming and outlining</li>
-                                    <li>Request examples of good writing or problem-solving</li>
-                                    <li>Use AI to check your work for errors</li>
-                                    <li>Cite AI assistance when required by your institution</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="donts">
-                                <h3>DON'T</h3>
-                                <ul class="guideline-list">
-                                    <li>Submit AI-generated work as your own</li>
-                                    <li>Use AI on exams or assignments where it's prohibited</li>
-                                    <li>Ask AI to write complete essays or solutions</li>
-                                    <li>Present AI ideas as your original thoughts without attribution</li>
-                                    <li>Use AI to bypass learning objectives</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<!-- ── Page Hero ── -->
+<section class="page-hero" aria-labelledby="guidelines-title">
+  <span class="page-hero__eyebrow">Student Reference</span>
+  <h1 class="page-hero__title" id="guidelines-title">AI Usage Guidelines</h1>
+  <p class="page-hero__sub">Clear rules and examples for responsible AI use in academic work.</p>
+</section>
 
-                    <!-- Privacy & Data Protection -->
-                    <div class="guideline-category">
-                        <h2>🛡️ Privacy & Data Protection</h2>
-                        <p>Protecting your personal information and sensitive data.</p>
-                        
-                        <div class="dos-donts">
-                            <div class="dos">
-                                <h3>DO</h3>
-                                <ul class="guideline-list">
-                                    <li>Use generic examples instead of personal information</li>
-                                    <li>Assume AI conversations could be reviewed or stored</li>
-                                    <li>Check the privacy policy of AI tools before use</li>
-                                    <li>Use institutional AI tools when available (they may have better privacy protections)</li>
-                                    <li>Delete sensitive conversations when possible</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="donts">
-                                <h3>DON'T</h3>
-                                <ul class="guideline-list">
-                                    <li>Share personal identifiers (name, student ID, address)</li>
-                                    <li>Input sensitive research data without permission</li>
-                                    <li>Share login credentials or financial information</li>
-                                    <li>Discuss private matters or confidential information</li>
-                                    <li>Assume AI providers won't use your data</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<!-- ── Main Content ── -->
+<section class="section section--white" aria-label="Guidelines content">
+  <div class="container">
 
-                    <!-- Verification & Fact-Checking -->
-                    <div class="guideline-category">
-                        <h2>🔍 Verification & Fact-Checking</h2>
-                        <p>Ensuring the accuracy of AI-generated information.</p>
-                        
-                        <div class="dos-donts">
-                            <div class="dos">
-                                <h3>DO</h3>
-                                <ul class="guideline-list">
-                                    <li>Verify statistics and facts with credible sources</li>
-                                    <li>Check AI-generated references actually exist</li>
-                                    <li>Look for consensus among multiple reliable sources</li>
-                                    <li>Use academic databases and peer-reviewed journals</li>
-                                    <li>Consult with instructors about important information</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="donts">
-                                <h3>DON'T</h3>
-                                <ul class="guideline-list">
-                                    <li>Assume AI is always correct</li>
-                                    <li>Use AI as a sole source of information</li>
-                                    <li>Trust AI-generated references without checking</li>
-                                    <li>Ignore contradictory information from reliable sources</li>
-                                    <li>Use AI for critical decisions without verification</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Effective Prompting -->
-                    <div class="guideline-category">
-                        <h2>🎯 Effective & Ethical Prompting</h2>
-                        <p>Asking questions that promote learning while maintaining integrity.</p>
-                        
-                        <div class="checklist">
-                            <h3>Ethical Prompting Checklist</h3>
-                            <p>Use this checklist when asking AI for help:</p>
-                            
-                            <div class="checklist-item">
-                                <input type="checkbox" id="check1">
-                                <label for="check1">My prompt asks for explanation, not answers</label>
-                            </div>
-                            
-                            <div class="checklist-item">
-                                <input type="checkbox" id="check2">
-                                <label for="check2">I'm not asking AI to do my work for me</label>
-                            </div>
-                            
-                            <div class="checklist-item">
-                                <input type="checkbox" id="check3">
-                                <label for="check3">The request helps me learn, not just complete</label>
-                            </div>
-                            
-                            <div class="checklist-item">
-                                <input type="checkbox" id="check4">
-                                <label for="check4">I'm not sharing personal information</label>
-                            </div>
-                            
-                            <div class="checklist-item">
-                                <input type="checkbox" id="check5">
-                                <label for="check5">I plan to verify important information</label>
-                            </div>
-                            
-                            <button id="checklist-reset" style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--secondary-color); color: white; border: none; border-radius: var(--border-radius); cursor: pointer;">
-                                Reset Checklist
-                            </button>
-                        </div>
-                        
-                        <div class="dos-donts">
-                            <div class="dos">
-                                <h3>GOOD PROMPTS</h3>
-                                <ul class="guideline-list">
-                                    <li>"Explain the concept of photosynthesis in simple terms"</li>
-                                    <li>"Help me create an outline for an essay about climate change"</li>
-                                    <li>"What are common errors in solving quadratic equations?"</li>
-                                    <li>"Suggest strategies for effective time management"</li>
-                                    <li>"How can I improve the structure of this paragraph?"</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="donts">
-                                <h3>POOR PROMPTS</h3>
-                                <ul class="guideline-list">
-                                    <li>"Write my 1000-word essay on Shakespeare"</li>
-                                    <li>"Solve these 10 calculus problems for me"</li>
-                                    <li>"Do my homework assignment about World War II"</li>
-                                    <li>"Generate a complete literature review for my paper"</li>
-                                    <li>"Answer these exam questions for my history test"</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Institutional Policies -->
-                    <div class="guideline-category">
-                        <h2>🏛️ Institutional Policies</h2>
-                        <p>Understanding and following your specific institution's rules.</p>
-                        
-                        <div class="key-questions">
-                            <h3>Questions to Ask Your Institution:</h3>
-                            <ul style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--border-radius);">
-                                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                                    <span style="position: absolute; left: 0;">•</span>
-                                    Is AI use allowed in this course/assignment?
-                                </li>
-                                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                                    <span style="position: absolute; left: 0;">•</span>
-                                    How should AI assistance be cited or acknowledged?
-                                </li>
-                                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                                    <span style="position: absolute; left: 0;">•</span>
-                                    Are there specific AI tools recommended or provided?
-                                </li>
-                                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                                    <span style="position: absolute; left: 0;">•</span>
-                                    What constitutes unacceptable AI use?
-                                </li>
-                                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                                    <span style="position: absolute; left: 0;">•</span>
-                                    Are there consequences for misuse of AI?
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <p style="margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-radius: var(--border-radius); border-left: 4px solid #f39c12;">
-                            <strong>Important:</strong> These guidelines are general. Always follow your specific institution's policies, which may be more restrictive. When in doubt, ask your instructor or academic advisor.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>academiAI</h3>
-                    <p>Promoting responsible AI use in education</p>
-                    <p id="current-year">© 2024 academiAI</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="tutorial.html">Interactive Tutorial</a></li>
-                        <li><a href="guidelines.html">AI Guidelines</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Important</h4>
-                    <p>This tool provides guidance only. Always follow your institution's specific policies.</p>
-                    <p class="api-status">API Status: Check Home Page</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Capstone Project - AIGuidebook | For educational purposes</p>
-            </div>
+    <!-- 1. Ethical Prompting Checklist -->
+    <div style="margin-bottom:48px;">
+      <div class="category-header">
+        <div class="category-header__icon">🎯</div>
+        <div>
+          <div class="category-header__title">Ethical Prompting Checklist</div>
+          <div class="category-header__sub">Check these before asking AI for help with academic work</div>
         </div>
-    </footer>
+      </div>
+      <div class="checklist-card">
+        <h3>Before you send your prompt, confirm:</h3>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk0">
+          <label for="chk0">My prompt asks for <strong>explanation or guidance</strong> — not a complete answer or finished work.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk1">
+          <label for="chk1">I am <strong>not asking AI to do the work for me</strong> — I will write in my own words.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk2">
+          <label for="chk2">The request will <strong>help me learn</strong> — not just help me complete a task.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk3">
+          <label for="chk3">I am <strong>not sharing personal information</strong> — mine or anyone else's.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk4">
+          <label for="chk4">I plan to <strong>verify any facts or references</strong> AI provides before using them.</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk5">
+          <label for="chk5">AI use is <strong>permitted for this assignment</strong> — or I have checked with my instructor.</label>
+        </div>
+        <button class="checklist-reset" aria-label="Reset checklist">↺ Reset checklist</button>
+      </div>
+    </div>
 
-    <script src="../scripts/main.js"></script>
-    <script>
-        // Checklist functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-            const resetButton = document.getElementById('checklist-reset');
-            
-            // Load saved state
-            checkboxes.forEach((checkbox, index) => {
-                const savedState = localStorage.getItem(`checklist-${index}`);
-                if (savedState === 'true') {
-                    checkbox.checked = true;
-                    checkbox.parentElement.classList.add('completed');
-                }
-                
-                checkbox.addEventListener('change', function() {
-                    this.parentElement.classList.toggle('completed', this.checked);
-                    localStorage.setItem(`checklist-${index}`, this.checked);
-                });
-            });
-            
-            // Reset button
-            if (resetButton) {
-                resetButton.addEventListener('click', function() {
-                    checkboxes.forEach((checkbox, index) => {
-                        checkbox.checked = false;
-                        checkbox.parentElement.classList.remove('completed');
-                        localStorage.removeItem(`checklist-${index}`);
-                    });
-                });
-            }
-        });
-    </script>
+    <hr class="rule">
+
+    <div class="notice notice--warn" style="margin-bottom:32px;">
+      <span>⚠️</span>
+      <div><strong>Important:</strong> These are general guidelines. Always follow your specific institution's policies, which may be more restrictive. When in doubt, ask your instructor.</div>
+    </div>
+
+    <!-- 2. Academic Integrity -->
+    <div style="margin-bottom:48px;">
+      <div class="category-header">
+        <div class="category-header__icon">📚</div>
+        <div>
+          <div class="category-header__title">Academic Integrity</div>
+          <div class="category-header__sub">What is — and isn't — acceptable when using AI in coursework</div>
+        </div>
+      </div>
+      <div class="dos-donts">
+        <div class="dos-donts__col dos-donts__col--do">
+          <h3>✓ Do</h3>
+          <ul class="dos-donts__list">
+            <li>Use AI to explain concepts you don't fully understand</li>
+            <li>Ask for help with brainstorming and structuring ideas</li>
+            <li>Request examples of good writing or problem-solving approaches</li>
+            <li>Use AI to get feedback on your own draft work</li>
+            <li>Cite AI assistance when required by your institution</li>
+            <li>Use AI to generate practice questions for self-study</li>
+          </ul>
+        </div>
+        <div class="dos-donts__col dos-donts__col--dont">
+          <h3>✗ Don't</h3>
+          <ul class="dos-donts__list">
+            <li>Submit AI-generated work as your own writing</li>
+            <li>Use AI on exams or assignments where it is explicitly prohibited</li>
+            <li>Ask AI to write complete essays, reports, or solutions</li>
+            <li>Present AI-generated ideas as your original thoughts without attribution</li>
+            <li>Use AI to bypass learning objectives or avoid engaging with the material</li>
+            <li>Assume AI use is allowed unless it is explicitly permitted</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <!-- 3. Privacy & Data -->
+    <div style="margin-bottom:48px;">
+      <div class="category-header">
+        <div class="category-header__icon">🛡️</div>
+        <div>
+          <div class="category-header__title">Privacy & Data Protection</div>
+          <div class="category-header__sub">Protecting your information and others' when using AI tools</div>
+        </div>
+      </div>
+      <div class="dos-donts">
+        <div class="dos-donts__col dos-donts__col--do">
+          <h3>✓ Do</h3>
+          <ul class="dos-donts__list">
+            <li>Use generic placeholders instead of real personal information</li>
+            <li>Assume AI conversations could be stored, reviewed, or used for training</li>
+            <li>Check the privacy policy of any AI tool before use</li>
+            <li>Use your institution's recommended AI tools when available</li>
+            <li>Delete sensitive conversations when possible</li>
+          </ul>
+        </div>
+        <div class="dos-donts__col dos-donts__col--dont">
+          <h3>✗ Don't</h3>
+          <ul class="dos-donts__list">
+            <li>Share names, addresses, phone numbers, or student ID numbers</li>
+            <li>Input sensitive research data or confidential information</li>
+            <li>Share login credentials or financial information</li>
+            <li>Discuss private matters involving other people</li>
+            <li>Assume your AI provider won't use your inputs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <!-- 4. Fact-Checking -->
+    <div style="margin-bottom:48px;">
+      <div class="category-header">
+        <div class="category-header__icon">🔍</div>
+        <div>
+          <div class="category-header__title">Verification & Fact-Checking</div>
+          <div class="category-header__sub">Ensuring the accuracy of AI-generated information</div>
+        </div>
+      </div>
+      <div class="dos-donts">
+        <div class="dos-donts__col dos-donts__col--do">
+          <h3>✓ Do</h3>
+          <ul class="dos-donts__list">
+            <li>Verify statistics and facts with credible, primary sources</li>
+            <li>Check that any AI-generated references actually exist</li>
+            <li>Look for consensus among multiple reliable academic sources</li>
+            <li>Use academic databases (Google Scholar, JSTOR) to verify claims</li>
+            <li>Consult your instructor when AI output conflicts with course material</li>
+          </ul>
+        </div>
+        <div class="dos-donts__col dos-donts__col--dont">
+          <h3>✗ Don't</h3>
+          <ul class="dos-donts__list">
+            <li>Assume AI is correct because it sounds confident</li>
+            <li>Use AI as your sole or primary source of information</li>
+            <li>Trust AI-generated references without independently verifying them</li>
+            <li>Ignore contradictory information from reliable academic sources</li>
+            <li>Submit facts or statistics sourced only from AI without verification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+  
+
+    <!-- 5. Prompting Examples Accordion -->
+    <div style="margin-bottom:48px;">
+      <div class="category-header">
+        <div class="category-header__icon">💬</div>
+        <div>
+          <div class="category-header__title">Prompting Examples</div>
+          <div class="category-header__sub">See what good and poor prompts look like in practice</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          ✍️ Essay Writing
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body__inner">
+            <div class="dos-donts" style="margin:0;">
+              <div class="dos-donts__col dos-donts__col--do">
+                <h3>✓ Ethical</h3>
+                <ul class="dos-donts__list">
+                  <li>"Help me create an outline for an essay on renewable energy policy"</li>
+                  <li>"What are the main arguments for and against this position?"</li>
+                  <li>"How can I improve the structure of this paragraph I wrote?"</li>
+                </ul>
+              </div>
+              <div class="dos-donts__col dos-donts__col--dont">
+                <h3>✗ Problematic</h3>
+                <ul class="dos-donts__list">
+                  <li>"Write my 1500-word essay on renewable energy policy"</li>
+                  <li>"Generate a complete essay I can submit for this assignment"</li>
+                  <li>"Write a better version of this essay for me"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          🔢 Mathematics & Problem Solving
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body__inner">
+            <div class="dos-donts" style="margin:0;">
+              <div class="dos-donts__col dos-donts__col--do">
+                <h3>✓ Ethical</h3>
+                <ul class="dos-donts__list">
+                  <li>"Explain the steps to solve this type of integral"</li>
+                  <li>"What concepts do I need to understand to approach this problem?"</li>
+                  <li>"Where did I go wrong in my calculation — here is my working"</li>
+                </ul>
+              </div>
+              <div class="dos-donts__col dos-donts__col--dont">
+                <h3>✗ Problematic</h3>
+                <ul class="dos-donts__list">
+                  <li>"Solve these 10 calculus problems for my homework"</li>
+                  <li>"Give me the answers to this problem set"</li>
+                  <li>"Complete this assignment for me"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          📖 Research & Literature Reviews
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body__inner">
+            <div class="dos-donts" style="margin:0;">
+              <div class="dos-donts__col dos-donts__col--do">
+                <h3>✓ Ethical</h3>
+                <ul class="dos-donts__list">
+                  <li>"What are the key themes in research on climate adaptation?"</li>
+                  <li>"Help me organise my notes from these papers I have read"</li>
+                  <li>"Suggest search terms I could use to find papers on this topic"</li>
+                </ul>
+              </div>
+              <div class="dos-donts__col dos-donts__col--dont">
+                <h3>✗ Problematic</h3>
+                <ul class="dos-donts__list">
+                  <li>"Write a literature review for my research paper"</li>
+                  <li>"Summarise these papers so I don't have to read them"</li>
+                  <li>"Generate a bibliography for my thesis"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Institutional Note -->
+    <div class="notice notice--info">
+      <span>🏛️</span>
+      <div>
+        <strong>Institutional policies vary.</strong> These guidelines are general best practices.
+        Always check your specific course handbook, syllabus, or speak to your instructor
+        to understand what AI use is permitted for each assignment.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand__name">AIGuideBook</div>
+      <p class="footer-brand__tag">Responsible AI guidance for university students.<br>A capstone project — PRO1000.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="../index.html">Home</a>
+      <a href="tutorial.html">Interactive Tutorial</a>
+      <a href="guidelines.html">AI Guidelines</a>
+      <a href="resources.html">Resources & FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>External</h4>
+      <a href="https://ki.sikt.no/en" target="_blank" rel="noopener">Sikt AI</a>
+      <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.uio.no/english/studies/examinations/sources-citations/" target="_blank" rel="noopener">Citation Guide</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="footer-year"></span> AIGuideBook &mdash; Capstone Project PRO1000 &mdash; For educational purposes only.</p>
+  </div>
+</footer>
+
+<script src="../scripts/main.js"></script>
 </body>
 </html>
