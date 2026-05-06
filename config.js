@@ -3,7 +3,7 @@
 const academiAIConfig = {
     // DeepSeek API Configuration
     deepseek: {
-        apiKey: 'sk-d6cd8f0f86104aefb010876014034dda', // ← REPLACE THIS WITH YOUR KEY
+        apiKey: 'sk-d6cd8f0f861fb010876014034dda', // ← REPLACE THIS WITH YOUR KEY
         apiUrl: 'https://api.deepseek.com/v1/chat/completions',
         model: 'deepseek-chat',
         temperature: 0.1,
